@@ -1,0 +1,29 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "i18next": "^22.4.9",
+    "leaflet": "^1.9.3",
+    "next": "13.1.6",
+    "next-i18next": "^13.1.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.1.5",
+    "react-icons": "^4.7.1",
+    "react-lazy-load": "^4.0.1",
+    "react-leaflet": "^4.2.0",
+    "react-share": "^4.4.1",
+    "sass": "^1.58.0",
+    "swiper": "^9.0.2"
+  }
+}
