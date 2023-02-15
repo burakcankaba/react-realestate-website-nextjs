@@ -16,21 +16,54 @@ import ModalMedia from "@/components/modalmedia/ModalMedia";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ params }) {
+    const data = home.find(x => x.id == params.id);
     return {
         props: {
+            property: data ?? null,
             ...(await serverSideTranslations(params.locale, [
                 'common',
             ])),
-            // Will be passed to the page component as props
         },
     }
 }
+
 export async function getStaticPaths() {
+    const locales = ["tr", "en", "ar", "ru"]
+
+    const paths = []
+    home?.map(({id}) => {
+        return locales.map((locale) => {
+            return paths.push({
+                params: { id: `${locale.toString( )}/property/${id}` ,locale},
+            })
+        })
+    })
+
     return {
-        paths: [],
-        fallback: 'blocking'
+        paths,
+        fallback: 'blocking',
     }
 }
+
+
+
+
+// export async function getStaticProps({ params }) {
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(params.locale, [
+//                 'common',
+//             ])),
+//             // Will be passed to the page component as props
+//         },
+//     }
+// }
+// export async function getStaticPaths() {
+//     return {
+//         paths: [],
+//         fallback: 'blocking'
+//     }
+// }
 
 const Property = () => {
     const router = useRouter()
