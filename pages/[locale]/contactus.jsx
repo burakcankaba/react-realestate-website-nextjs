@@ -4,17 +4,16 @@ import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 
 const getStaticProps = makeStaticProps(['common'])
 export { getStaticPaths, getStaticProps }
-
-const About = () => {
-  const { t } = useTranslation('common')
-  return (
-    <div className='aboutUs'>
-      <p>
-      {t('aboutUS_Text')}
-      
-      </p>
-    </div>
-  )
+const Contactus = () => {
+    const { t } = useTranslation('common')
+    return (
+      <div className='aboutUs'>
+        <p>
+        {t('aboutUS_Text')}
+        
+        </p>
+      </div>
+    )
 }
 
-export default About
+export default Contactus

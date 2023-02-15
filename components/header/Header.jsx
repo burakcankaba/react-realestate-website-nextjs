@@ -32,8 +32,8 @@ const Header = () => {
                             <li><Link href="/">{t('properties')}</Link></li>
                             <li className="asSoonas"><Link href="/projects">{t('projects')}</Link></li>
                             <li className="asSoonas"><Link href="/">{t('blog')}</Link></li>
-                            <li><Link href="about">{t('aboutus')}</Link></li>
-                            <li><Link href="contactus">{t('contactus')}</Link></li>
+                            <li><Link href={`/about`}>{t('aboutus')}</Link></li>
+                            <li><Link href="/contactus">{t('contactus')}</Link></li>
                         </ul>
                     </div>
                     <div className="language">
