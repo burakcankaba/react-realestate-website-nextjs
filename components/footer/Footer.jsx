@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { SiFacebook, SiInstagram, SiTwitter } from 'react-icons/si'
-import Link from 'next/link'
+import Link from '../Link'
 import { useTranslation } from 'next-i18next'
 
 const Footer = () => {

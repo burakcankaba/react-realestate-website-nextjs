@@ -4,7 +4,7 @@ import { Keyboard, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import home from "../../villaProps";
-import  Link  from 'next/link';
+import Link from '../Link'
 import LazyLoad from 'react-lazy-load';
 import { useTranslation } from 'next-i18next';
 const Properties = () => {
@@ -18,7 +18,7 @@ const Properties = () => {
           {
             home.map((item, i) => (
               <div className="item" key={i}>
-                <Link href={`/${currentLanguageCode}/property/${item.id}`}>
+                <Link href={`/property/${item.id}`}>
 
                   <div className='imgContainer'>
                     <Swiper

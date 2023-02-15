@@ -1,4 +1,4 @@
-import home from "../../villaProps";
+import home from "../../../villaProps";
 import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Navigation } from "swiper";
@@ -11,35 +11,34 @@ import LazyLoad from 'react-lazy-load';
 import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { useState } from 'react';
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import ModalMedia from "@/components/modalmedia/ModalMedia";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export async function getStaticProps({ locale }) {
-
+export async function getStaticProps({ params }) {
     return {
-      props: {
-        ...(await serverSideTranslations(locale, [
-          'common',
-        ])),
-        // Will be passed to the page component as props
-      },
+        props: {
+            ...(await serverSideTranslations(params.locale, [
+                'common',
+            ])),
+            // Will be passed to the page component as props
+        },
     }
-  }
-  export async function getStaticPaths() {
+}
+export async function getStaticPaths() {
     return {
         paths: [],
         fallback: 'blocking'
     }
-  }
+}
 
 const Property = () => {
     const router = useRouter()
     const id = router.query.id;
-    const {i18n } = useTranslation();
     const [openModal, setOpenModal] = useState(false);
     const data = home.find(x => x.id == id);
     const { t } = useTranslation('common')
-    const currentLanguageCode = i18n.language ? i18n.language:"tr";
+    const currentLanguageCode = router.query.locale || i18nextConfig.i18n.defaultLocale;
     return (
         <>
             {data && <Head>
@@ -62,8 +61,6 @@ const Property = () => {
                 <meta property="og:image:height" content="600" />
                 <meta property="og:image:alt" content={data.propShortDesc[0][currentLanguageCode]} />
                 <meta name="og:url" content={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`} />
-
-                <meta property="og:url" content={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`} />
                 <meta property="og:description" content={data.propShortDesc[0][currentLanguageCode]} />
 
                 <meta name="twitter:card" content={data.propShortDesc[0][currentLanguageCode]} />
@@ -142,37 +139,37 @@ const Property = () => {
 
                     </div>
                 </div>
-                {/* <div className='shareButtonOnDetail'>
+                <div className='shareButtonOnDetail'>
                     <ul >
                         <li>
-                            <FacebookShareButton url={`https://talainvestment.com/${location.pathname}`}>
+                            <FacebookShareButton url={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`}>
                                 <FacebookIcon round />
                             </FacebookShareButton>
                         </li>
                         <li>
-                            <FacebookMessengerShareButton url={`https://talainvestment.com/${location.pathname}`}>
+                            <FacebookMessengerShareButton url={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`}>
                                 <FacebookMessengerIcon round />
                             </FacebookMessengerShareButton>
                         </li>
                         <li>
-                            <WhatsappShareButton url={`https://talainvestment.com/${location.pathname}`}>
+                            <WhatsappShareButton url={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`}>
                                 <WhatsappIcon round />
                             </WhatsappShareButton>
                         </li>
                         <li>
-                            <TwitterShareButton url={`https://talainvestment.com${location.pathname}`}>
+                            <TwitterShareButton url={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`}>
                                 <TwitterIcon round />
                             </TwitterShareButton>
                         </li>
                         <li>
-                            <TelegramShareButton url={`https://talainvestment.com/${location.pathname}`}>
+                            <TelegramShareButton url={`https://talainvestment.com/${currentLanguageCode}/property/${data.id}`}>
                                 <TelegramIcon round />
                             </TelegramShareButton>
                         </li>
 
 
                     </ul>
-                </div> */}
+                </div>
 
             </div>}
         </>

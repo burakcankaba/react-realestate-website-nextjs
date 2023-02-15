@@ -1,20 +1,21 @@
 
 import { SiFacebook, SiInstagram, SiTwitter } from "react-icons/si"
 import { CgClose, CgMail, CgMenuGridR, CgPhone, CgPin } from "react-icons/cg"
-import Link from 'next/link';
+import Link from '../Link'
 import { useEffect, useState } from "react";
-
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import LanguageSwitchLink from '../LanguageSwitchLink';
+import i18nextConfig from '../../next-i18next.config';
 const Header = () => {
-    const { t,i18n } = useTranslation();
     const [openPL, setOpenPL] = useState(false);
-    console.log(i18n.language)
-    const currentLanguageCode = i18n.language;
-    const router = useRouter();
+    const router = useRouter()
+    const { t } = useTranslation('common')
+    const currentLanguageCode = router.query.locale || i18nextConfig.i18n.defaultLocale
     const [openMenu, setOpenMenu] = useState(false);
+    console.log(currentLanguageCode)
     useEffect(() => {
-        document.body.dir = currentLanguageCode === "ar" ? "rtl" :"ltr"
+        document.body.dir = currentLanguageCode === "ar" ? "rtl" : "ltr"
         document.documentElement.lang = currentLanguageCode;
     }, [currentLanguageCode, t])
     return (
@@ -45,20 +46,15 @@ const Header = () => {
 
                             <div className="navPLSelect" onClick={() => setOpenPL(false)}>
                                 <ul>
-                                    {
-                                        router.locales.map((locale) => (
-                                            <li key={locale}>
-                                                <Link href={router.asPath} locale={locale}>
-
-                                                    <img src={`/flag/${locale}.png`} alt="" />
-                                                    <label>{locale}</label>
-
-                                                </Link>
-                                            </li>
-                                        ))
-                                    }
-
-
+                                    {i18nextConfig.i18n.locales.map((locale) => {
+                                        if (locale === currentLanguageCode) return null
+                                        return (
+                                            <LanguageSwitchLink
+                                                locale={locale}
+                                                key={locale}
+                                            />
+                                        )
+                                    })}
                                 </ul>
 
                             </div>

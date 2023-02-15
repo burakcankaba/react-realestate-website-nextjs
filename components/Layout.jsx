@@ -4,15 +4,15 @@ import { SiFacebook, SiInstagram, SiTwitter, SiWhatsapp } from 'react-icons/si'
 import { CgPhone } from 'react-icons/cg'
 import { useEffect } from 'react'
 export default function Layout({ children }) {
-  useEffect(() => {
-    const handleContextmenu = e => {
-        e.preventDefault()
-    }
-    document.addEventListener('contextmenu', handleContextmenu)
-    return function cleanup() {
-        document.removeEventListener('contextmenu', handleContextmenu)
-    }
-}, [ ])
+//   useEffect(() => {
+//     const handleContextmenu = e => {
+//         e.preventDefault()
+//     }
+//     document.addEventListener('contextmenu', handleContextmenu)
+//     return function cleanup() {
+//         document.removeEventListener('contextmenu', handleContextmenu)
+//     }
+// }, [ ])
   return (
     <>
       <Header />
