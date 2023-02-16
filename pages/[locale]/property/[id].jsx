@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     home?.map(({id}) => {
         return locales.map((locale) => {
             return paths.push({
-                params: { id: `${locale.toString( )}/property/${id}` ,locale},
+                params: { id: `${id}` ,locale},
             })
         })
     })

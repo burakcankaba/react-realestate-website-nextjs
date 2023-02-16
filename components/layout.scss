@@ -67,8 +67,9 @@ $secondColor: #E6B750 !default;
                     font-weight: 500;
                     font-size: 14px;
                     text-transform: uppercase;
-                    a{
-                        color:white;
+
+                    a {
+                        color: white;
                         text-decoration: none;
                     }
                 }
@@ -104,7 +105,7 @@ $secondColor: #E6B750 !default;
                 background: $secondColor;
                 border-radius: 3px;
                 z-index: 9;
-                padding: 10px;
+                padding: 5px 10px;
 
                 >label {
                     color: white;
@@ -121,19 +122,26 @@ $secondColor: #E6B750 !default;
                             display: flex;
                             align-items: center;
                             margin: 5px 0;
-                            gap: 10px;
+                            //gap: 10px;
 
-                            img {
-                                width: 30px;
-                                border-radius: 3px;
+                            button {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                img {
+                                    width: 30px;
+                                    border-radius: 3px;
+                                }
+
+                                label {
+                                    text-transform: uppercase;
+                                    color: white;
+                                    font-weight: 400;
+                                    cursor: pointer;
+                                }
                             }
 
-                            label {
-                                text-transform: uppercase;
-                                color: white;
-                                font-weight: 400;
-                                cursor: pointer;
-                            }
                         }
                     }
                 }
@@ -549,13 +557,62 @@ footer {
         }
     }
 }
-.asSoonas{
+
+.asSoonas {
     text-decoration: line-through;
     pointer-events: none;
-    ::before{
+
+    ::before {
         content: "-";
     }
-    ::after{
+
+    ::after {
         content: "-";
+    }
+}
+
+.aboutUs{
+    padding:0 10px;
+}
+.contactPage {
+    .map {
+        margin-bottom:10px;
+        .leaflet-container {
+            height: 400px;
+        }
+    }
+
+    .blocks {
+        background-color: #1c313e0d;
+        max-width:1200px;
+        margin:0 auto;
+        padding:15px;
+        border-radius: 6px;
+        margin-bottom:20px;
+        display:flex;
+        align-items: center;
+        .left_block {
+            width:60%;
+            >div{
+                display:flex;
+                align-items: center;
+                gap:10px;
+                padding:10px;
+                .label{
+                    font-size:15px;
+                    font-weight: 500;
+                }
+                .value{
+                    
+                    font-size:15px;
+                }
+            }
+        }
+        .right_block {
+            width:40%;
+            font-size:14px;
+        }
+
+        
     }
 }

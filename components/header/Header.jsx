@@ -49,10 +49,13 @@ const Header = () => {
                                     {i18nextConfig.i18n.locales.map((locale) => {
                                         if (locale === currentLanguageCode) return null
                                         return (
-                                            <LanguageSwitchLink
-                                                locale={locale}
-                                                key={locale}
-                                            />
+                                            <li key={locale}>
+                                                <LanguageSwitchLink
+                                                    locale={locale}
+                                                    
+                                                />
+                                            </li>
+
                                         )
                                     })}
                                 </ul>

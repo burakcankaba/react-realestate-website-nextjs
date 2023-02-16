@@ -23,7 +23,11 @@ const LanguageSwitchLink = ({ locale, ...rest }) => {
       href={href}
       onClick={() => languageDetector.cache(locale)}
     >
-      <button style={{ fontSize: 'small' }}>{locale}</button>
+      <button style={{ fontSize: 'small' }}>
+        <img src={`/flag/${locale}.png`} alt="" />
+        <label>{locale}</label>
+
+      </button>
     </Link>
   );
 };
