@@ -9,9 +9,17 @@ const About = () => {
   const { t } = useTranslation('common')
   return (
     <div className='aboutUs'>
-      <p>
-      {t('aboutUS_Text')}
-      
+      <h1>{t('whous')}</h1>
+      <p>{t('whous_desc1')}
+        <br></br><br></br>
+        {t('whous_desc2')}
+        <br></br><br></br>
+        {t('whous_desc3')}
+        <br></br><br></br>
+        {t('whous_desc4')}
+        <br></br><br></br>
+        {t('whous_desc5')}
+        
       </p>
     </div>
   )

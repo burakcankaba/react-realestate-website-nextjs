@@ -13,15 +13,15 @@ const Contactus = () => {
         <div className="left_block">
           <div>
             <div className="label">{t('address')}:</div>
-            <div className="value">BabataşıMah. CahitGündüz Cad. No:62/A FethiyeMuğla</div>
+            <div className="value">Fethiye / Muğla</div>
           </div>
           <div>
             <div className="label">{t('phone')}:</div>
-            <div className="value">+90 252 612 31 32</div>
+            <div className="value">+90 539 544 85 87</div>
           </div>
           <div>
             <div className="label">{t('email')}:</div>
-            <div className="value">info@talainvestment.com</div>
+            <div className="value">info@kabasoft.com.tr</div>
           </div>
           <div>
             <div className="label">{t('work_hours')}:</div>
@@ -29,7 +29,7 @@ const Contactus = () => {
           </div>
         </div>
         <div className="right_block">
-          {t('aboutUS_Text')}
+          Şirketimiz, kurulduğu günden bu yana yenilikçi ve müşteri odaklı bir yaklaşımla hizmet veren bir firma olarak faaliyetlerini sürdürmektedir. Müşteri memnuniyetini en ön planda tutarak, kaliteli ürün ve hizmetler sunmayı hedefleyen şirketimiz, yazılım sektöründe üst sıralara tırmanmak için çalışmaktadır.
         </div>
       </div>
     </div>

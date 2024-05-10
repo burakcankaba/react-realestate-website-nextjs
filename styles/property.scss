@@ -1,249 +1,72 @@
-$firstColor: #2F544F !default;
-$secondColor: #E6B750 !default;
-
-.detailPage {
-    .showAllPhotos {
-        position: absolute;
-        bottom: 10px;
-        z-index: 99;
-        left: 0;
-        right: 0;
-        text-align: center;
-
-        button {
-            background: #ffffffb3;
-            padding: 5px;
-            border-radius: 3px;
-            font-weight: 500;
-            color: $firstColor;
-            transition: .5s;
-
-            &:hover {
-                background: white;
-            }
-        }
-    }
-
-    .leaflet-container {
-        width: 100%;
-        height: 350px;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        height: 20px;
-        width: 20px;
-        background: rgb(255 255 255 / 78%);
-        padding: 5px;
-        border-radius: 8px;
-    }
-
-    .mediaContent {
-        img {
-            width: 100%;
-            object-fit: cover;
-            height: 350px;
-            @media (max-width: 768px) {
-                height: 170px;    
-            }
-        }
-    }
-
-    .propDetail {
-        max-width: 1024px;
-        margin: 0 auto;
+.blogDetail {
+    .img {
         position: relative;
 
-        @media (max-width: 768px) {
-            margin: 0 10px;
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .propTitle {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-
-            @media (max-width: 768px) {
-                display: block !important;
-                text-align: center;
-            }
-
-            >div>span {
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-
-                @media (max-width: 768px) {
-                    display: block !important;
-                    text-align: center;
-                    margin: 10px 0;
-                }
-            }
-
-            h1 {
-                font-size: 24px;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-
-                @media (max-width: 768px) {
-                    display: block !important;
-                    text-align: center;
-                }
-
-                span {
-                    font-size: 13px;
-                    margin: 10px;
-                    padding: 3px 10px;
-                    border-radius: 3px;
-                    background-color: $firstColor;
-                    color: white;
-                    font-weight: 300;
-
-                    @media (max-width: 768px) {
-                        display: block !important;
-                        text-align: center;
-                    }
-                }
-            }
-
-            label {
-                font-size: 20px;
-                color: $firstColor;
-                font-weight: 600;
-
-                >span {
-                    font-weight: 400;
-                    font-size: 15px;
-                }
-            }
-        }
-
-        .propDesc {
-
-            >h2 {
-                font-size: 18px;
-                font-weight: 600;
-                margin-bottom: 10px;
-
-                @media (max-width: 768px) {
-
-                    text-align: center;
-                }
-            }
-
-            >div {
-                padding: 5px 10px;
-                background: #e6b75047;
-
-                h3 {
-                    font-size: 15px;
-                    font-weight: 500;
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-
-                    svg {
-                        color: $firstColor;
-                    }
-                }
-
-                p {
-                    font-size: 14px;
-                    margin: 3px 0;
-                }
-            }
-        }
-
-        .propMap {
-            margin: 20px 0;
-
-            >h2 {
-                font-size: 18px;
-                font-weight: 600;
-
-                @media (max-width: 768px) {
-
-                    text-align: center;
-                }
-            }
+        h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
 
         }
+
     }
 
+    .desc {
+        background: white;
+        padding: 20px;
+        @media(max-width:767px){
+            margin: 0 20px;
+        }
+        @media(min-width:768px){
+            margin: 0 50px;    
+        }
+        
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ef233c;
+
+        }
+
+        p {
+            font-size: 15px;
+            color: #2b2d42; white-space: pre-wrap;
+        }
+
+        .publisedDate {
+            text-align: right;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2b2d42;
+        }
+
+    }
+
+    
 }
-.shareButtonOnDetail{
-    max-width:1024px;
-    margin:0 auto;
-    justify-content: center;
-    display:flex;
-    >ul{
+.shareButtonOnDetail {
+    margin-top:30px !important;
+    background: white;
+    margin: 0 50px;
+    ul{
         display:flex;
-        gap:10px;
+        align-items: center;
+        justify-content: center;
         li{
+            padding:0 10px;
             svg{
                 width:40px;
             }
         }
     }
-}
-
-.villaMedias {
-    position: relative;
-    .swiper-button-next,
-    .swiper-button-prev {
-        height: 20px;
-        width: 20px;
-        background: rgb(255 255 255 / 78%);
-        padding: 5px;
-        border-radius: 8px;
-    }
-}
-
-.modalMedia {
-    position: fixed;
-    z-index: 1300;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;background-color: #0000008a;
-    .closePhotosModal {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        z-index: 100;
-        cursor:pointer;
-        &:hover{
-            svg{
-                color:white;
-            }
-        }
-        svg {
-            color: #ffffffad;
-            font-size:35px;
-            transition:.5s;
-        }
-    }
-
-    .villaPModal {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 900px;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        z-index: 99;
-        @media (max-width: 768px) {
-            width: 100%;    
-        }
-        img{
-            height: auto !important;
-        }
-    }
-
-
 }

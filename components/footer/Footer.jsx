@@ -10,16 +10,16 @@ const Footer = () => {
     <>
       <footer>
         <div className='logoFooter'>
-          <img src='/logo.png' />
+          <img src='/kabasoft.png' />
         </div>
         <div className="menuFooter">
           <ul>
-            <li><Link href={"/"}>{t('homepage')}</Link></li>
-            <li><Link href={"/"}>{t('properties')}</Link></li>
-            <li className='asSoonas'><Link href={"/"}>{t('projects')}</Link></li>
-            <li className='asSoonas'><Link href={"/"}>{t('blog')}</Link></li>
-            <li><Link href={"/aboutus"}>{t('aboutus')}</Link></li>
-            <li><Link href={"/contactus"}>{t('contactus')}</Link></li>
+            <li><Link href="/">{t('homepage')}</Link></li>
+            <li><Link href="/about">{t('aboutus')}</Link></li>
+            <li><Link href="/ourservice">{t('ourservice')}</Link></li>
+            <li><Link href="/reference">{t('reference')}</Link></li>
+            <li><Link href={`/academy`}>{t('academy')}</Link></li>
+            <li><Link href="/contactus">{t('contactus')}</Link></li>
           </ul>
         </div>
         <div className="socialFooter">

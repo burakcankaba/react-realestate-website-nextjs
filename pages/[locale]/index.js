@@ -1,10 +1,11 @@
 import Head from 'next/head'
-import Banner from '@/components/banner/Banner';
-import Properties from '@/components/properties/Properties';
-import SeoNote from '@/components/seoNote/SeoNote';
-//import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 import { useTranslation } from 'next-i18next';
+import Banner from '@/components/banner/Banner';
+import Solve from '@/components/solve/Solve';
+import OurServices from '@/components/ourServices/OurServices';
+import HomeBanner from '@/components/banner/HomeBanner';
+import Blog from '@/components/blogs/Blog';
 
 const getStaticProps = makeStaticProps(['common'])
 export { getStaticPaths, getStaticProps }
@@ -15,26 +16,18 @@ export default function Home() {
   return (
     <>
       <Head>
+      {/* <title>{t('page_title_home')}</title> */}
       <title>{t('page_title_home')}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Tala investment villa kiralama ve satış ofisi" />
+      <meta name="description" content={t('page_desc_home')} />
       <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
-      <Properties/>
-      <SeoNote/>
+      <OurServices/>
+      <HomeBanner/>
+      <Solve/>
+      <Blog/>
+      
     </>
   )
 }
-
-// export async function getStaticProps({ locale }) {
-
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, [
-//         'common',
-//       ])),
-//       // Will be passed to the page component as props
-//     },
-//   }
-// }

@@ -1,5 +1,5 @@
 
-import { SiFacebook, SiInstagram, SiTwitter } from "react-icons/si"
+import { SiFacebook, SiInstagram } from "react-icons/si"
 import { CgClose, CgMail, CgMenuGridR, CgPhone, CgPin } from "react-icons/cg"
 import Link from '../Link'
 import { useEffect, useState } from "react";
@@ -22,23 +22,23 @@ const Header = () => {
         <>
             <div className='header' >
                 <div className='logo'><Link href="/">
-
-                    <img src="/logo.png" alt="Tala Turizm Logo" />
+                    <img src="/kabasoft.png" alt="Kabasoft Akademi" />
                 </Link></div>
                 <div className='h_r'>
                     <div className="menu mobile-menu">
                         <ul>
                             <li><Link href="/">{t('homepage')}</Link></li>
-                            <li><Link href="/">{t('properties')}</Link></li>
-                            <li className="asSoonas"><Link href="/projects">{t('projects')}</Link></li>
-                            <li className="asSoonas"><Link href="/">{t('blog')}</Link></li>
                             <li><Link href={`/about`}>{t('aboutus')}</Link></li>
+                            <li><Link href="/ourservice">{t('ourservice')}</Link></li>
+                            <li><Link href="/reference">{t('reference')}</Link></li>
+                            <li className="academy"><Link href={`/academy`}>{t('academy')}</Link></li>
+                            <li><Link href={`/blog`}>{t('blog')}</Link></li>
                             <li><Link href="/contactus">{t('contactus')}</Link></li>
                         </ul>
                     </div>
                     <div className="language">
                         <button onClick={() => setOpenPL(!openPL)}>
-                            <img src={`/flag/${currentLanguageCode}.png`} alt="" />
+                            <img src={`/flag/${currentLanguageCode}.png`} alt={currentLanguageCode} />
                             <label className="currLang">{currentLanguageCode}</label>
                         </button>
                         {openPL &&
@@ -52,7 +52,7 @@ const Header = () => {
                                             <li key={locale}>
                                                 <LanguageSwitchLink
                                                     locale={locale}
-                                                    
+
                                                 />
                                             </li>
 
@@ -77,11 +77,20 @@ const Header = () => {
                 </div>
                 <div className='section'>
                     <div className="companyLogo">
-                        <img src="/logo.png" alt="Tala Turizm Logo" />
+                        <img src="/kabasoft.png" alt="kabasoft" />
                     </div>
-                    <div className='companyText'>
-                        {t('page_desc_home')}
-                    </div>
+                    {/* <div className='companyText'>
+                        Kabasoft olarak; ihtiyaç duyduğunuz yazılım projelerine tecrübemiz ve geniş bakış açımızla çözümler üretiriz.
+                    </div> */}
+                </div>
+                <div className="mobilev1" onClick={()=>setOpenMenu(false)}>
+                    <ul>
+                        <li><Link href={`/about`}>{t('aboutus')}</Link></li>
+                        <li><Link href="/ourservice">{t('ourservice')}</Link></li>
+                        <li><Link href="/reference">{t('reference')}</Link></li>
+                        <li className="academy"><Link href={`/academy`}>{t('academy')}</Link></li>
+                        <li><Link href={`/blog`}>{t('blog')}</Link></li>
+                    </ul>
                 </div>
                 <div className='section'>
                     <div className='getInTouchText'>{t('our_contact_info')}</div>
@@ -91,7 +100,7 @@ const Header = () => {
                                 <CgMail />
                                 <div>
                                     <div className='label'>{t('email')}</div>
-                                    <div className='value'>info@investment.com</div>
+                                    <div className='value'>info@kabasoft.com.tr</div>
                                 </div>
                             </div>
                         </li>
@@ -100,7 +109,7 @@ const Header = () => {
                                 <CgPhone />
                                 <div>
                                     <div className='label'>{t('phone')}</div>
-                                    <div className='value'>(+90) 542 778 71 70</div>
+                                    <div className='value'>(+90) 539 544 85 87</div>
                                 </div>
                             </div>
                         </li>
@@ -120,9 +129,8 @@ const Header = () => {
                         {t('followUs')}
                     </div>
                     <ul className='socialSec'>
-                        <li><a href='https://www.instagram.com/talainvestment/' target="_blank" rel="noreferrer"><SiInstagram /></a></li>
-                        <li><a href='https://www.facebook.com/talatourism' target="_blank" rel="noreferrer"><SiFacebook /></a></li>
-                        <li><a href='https://twitter.com/tala_tourism' target="_blank" rel="noreferrer"><SiTwitter /></a></li>
+                        <li><a href='https://www.instagram.com/kabasoftcomtr/' target="_blank" rel="noreferrer"><SiInstagram /></a></li>
+                        <li><a href='https://www.facebook.com/kabasoftcomtr' target="_blank" rel="noreferrer"><SiFacebook /></a></li>
                     </ul>
                 </div>
 
